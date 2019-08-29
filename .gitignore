@@ -1,0 +1,4 @@
+.idea/workspace.xml
+config/local*
+debug.log
+node_modules/

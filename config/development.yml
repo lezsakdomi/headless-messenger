@@ -1,0 +1,4 @@
+chromium:
+  headless: false
+  devtools: true
+debug: true

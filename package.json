@@ -1,0 +1,17 @@
+{
+  "name": "pt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-escape-sequences": "^4.1.0",
+    "chalk": "^2.4.2",
+    "config": "^3.2.2",
+    "debug": "^4.1.1",
+    "js-yaml": "^3.13.1",
+    "process": "^0.11.10",
+    "prompt": "^1.0.0",
+    "puppeteer": "^1.19.0",
+    "strip-ansi": "^5.2.0"
+  }
+}
