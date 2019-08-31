@@ -7,11 +7,11 @@
 ## About the code
 
 - There is the `./app.js` which handles the main workflows
-- All kind of classes can be found in `./classes`
+- All kinds of classes can be found in `./classes`
     - You better start with `FacebookMessengerPageElement` which is the base for
-        all DOM element
+        all DOM elements
         - Currently the `MessageListContainer` is the most important root node
-    - There is a nice `./classes/index.js`. Don't use that.
+    - There is a nice `./classes/index.js`. Don't use it.
 - This project uses [`config`](https://npmjs.com/package/config).
 
 ## Development workflow
@@ -50,11 +50,11 @@
 2. Redirect standard error to `./debug.log` (`2>debug.log`)
 3. Issue `global.writeMessagesToTerminal().then(() => console.log("Yay, success!"), console.error)`
 4. If you get your messages and/or the text _Yay, success!_ in reply, you are all good; bail out here
-5. In the browser console check which trace seemed the most real  
+5. In the browser console check which trace seems most real  
     Let's say it's `[headless-messenger:tree:error:trace:0:trace:1:trace:1:trace:0] ChildMatchError: Unknown child of a 
     SomeOuterClass, <div some="outer" class="ish"></div>, <div some="inner" classish></div>`
 6. Search for the trace namespace in the debug log (_headless-messenger:tree:error:trace:0:trace:1:trace:1:trace:0_ in our example)
-7. Read the error details. Always helps.
+7. Read the error details. It always helps.
 8. Extract the associated namespace and now search for that  
     It should look like `2019-08-28T16:56:32.411Z headless-messenger:tree:error:trace:0:trace:1:trace:1:trace:0 Occurred in namespace 'f3b2:MessageListDataContainer/#0.MessageListMessagesGroup/#0.MessageListMessagesContainer/#0.MessageListMessagesGroupMessageOuterContainer/#0.MessageListMessagesGroupMessageReplyInfoOuterContainer'.`
 9. Now search for the new, more internal namespace. (_f3b2:MessageListDataContainer/#0.MessageListMessagesGroup/#0.MessageListMessagesContainer/#0.MessageListMessagesGroupMessageOuterContainer/#0.MessageListMessagesGroupMessageReplyInfoOuterContainer_)
