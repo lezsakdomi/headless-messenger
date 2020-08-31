@@ -7,7 +7,7 @@ class MessageListMessagesGroupSmallHeadStatusIcon extends FacebookMessengerPageE
 	}
 
 	static get htmlNode() {
-		return 'i'
+		return 'span'
 	}
 
 	static get additionalSelectors() {
