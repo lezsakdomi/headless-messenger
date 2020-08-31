@@ -184,13 +184,18 @@ class FacebookMessengerPageElement {
 				if (possibleInstances.length === 1) {
 					return possibleInstances[0]
 				} else {
-					if (!config.get('debug')) element.dispose()
-					// todo do additional cleanup (like for attributes)
-
-					if (possibleInstances.length === 0) {
-						throw new UnknownChildError(element, this, undefined, errors, namespace)
+					if (!config.get('debug')) {
+						const UnknownPageElement = require('./UnknownPageElement')
+						return new UnknownPageElement(element)
 					} else {
-						throw new AmbiguousChildClassError(element, this, undefined, namespace)
+						// element.dispose()
+						// todo do additional cleanup (like for attributes)
+
+						if (possibleInstances.length === 0) {
+							throw new UnknownChildError(element, this, undefined, errors, namespace)
+						} else {
+							throw new AmbiguousChildClassError(element, this, undefined, namespace)
+						}
 					}
 				}
 			}

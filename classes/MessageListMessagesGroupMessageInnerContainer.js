@@ -42,7 +42,8 @@ class MessageListMessagesGroupMessageInnerContainer extends FacebookMessengerPag
 		} = options
 
 		const timingString = await this.getTimingString()
-		const text = await this.getContentContainer().then(container => container.getText()) // getText returns aria-label for it
+		const contentContainer = await this.getContentContainer() || this
+		const text = await contentContainer.getText() // getText returns aria-label for it (if valid cC)
 		const textLines = text.split('\n')
 
 		return chalk.dim(timingString) + " " + chalk.green(textLines[0]) +
